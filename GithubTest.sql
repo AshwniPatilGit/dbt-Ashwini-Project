@@ -1,1 +1,1 @@
-select * from AIRBNB.RAW.RAW_HOSTS
+select * from AIRBNB.RAW.RAW_HOSTS limit 10 ;
