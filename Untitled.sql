@@ -1,0 +1,1 @@
+execute dbt project airbnb;
