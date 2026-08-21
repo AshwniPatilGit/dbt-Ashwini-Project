@@ -9,4 +9,4 @@ host_id,
 price as pric_str,
 created_at,
 updated_at
-FROM raw_listings;
+FROM raw_listings

@@ -1,0 +1,180 @@
+
+
+============================== 07:27:00.336188 | 96dafc32-980e-4a7b-9d78-043d8e4649ea ==============================
+[0m07:27:00.336188 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:27:00.337041 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m07:27:00.611096 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:27:01.149086 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:27:01.151568 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m07:27:02.391573 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:27:02.393522 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:27:02.426062 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m07:27:02.428060 [info ] [Dummy-1   ]: 
+[0m07:27:02.428639 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:27:02.429121 [info ] [Dummy-1   ]: 
+[0m07:27:02.429905 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:27:02.432163 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_AIRBNB_DEV'
+[0m07:27:02.522443 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m07:27:02.523065 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:27:02.523556 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:27:02.984597 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.461 seconds
+[0m07:27:02.989234 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m07:27:02.989789 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+show objects in AIRBNB.DEV
+    limit 10000
+    
+;
+[0m07:27:03.089758 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.099 seconds
+[0m07:27:03.092017 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m07:27:03.092559 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:27:03.192627 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.099 seconds
+[0m07:27:03.204532 [debug] [Thread-2 (]: Began running node model.airbnb.src_listings
+[0m07:27:03.205364 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_AIRBNB_DEV, now model.airbnb.src_listings)
+[0m07:27:03.205966 [debug] [Thread-2 (]: Began compiling node model.airbnb.src_listings
+[0m07:27:03.214860 [debug] [Thread-2 (]: Writing injected SQL for node "model.airbnb.src_listings"
+[0m07:27:03.215801 [debug] [Thread-2 (]: Began executing node model.airbnb.src_listings
+[0m07:27:03.216704 [debug] [Thread-2 (]: Finished running node model.airbnb.src_listings
+[0m07:27:03.219212 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:27:03.219690 [debug] [Dummy-1   ]: Connection 'model.airbnb.src_listings' was properly closed.
+[0m07:27:03.220475 [debug] [Dummy-1   ]: Command end result
+[0m07:27:03.240648 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:27:03.242641 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:27:03.249580 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:27:03.251481 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.9888916, "process_in_blocks": "0", "process_kernel_time": 0.73, "process_mem_max_rss": "505304", "process_out_blocks": "0", "process_user_time": 4.84}
+[0m07:27:03.252159 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 07:27:03.251905 after 2.99 seconds
+[0m07:27:03.252685 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:28:13.051984 | e1277430-fb96-4db4-abe5-b58533e233f1 ==============================
+[0m07:28:13.051984 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:28:13.053369 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m07:28:13.501101 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:28:15.349690 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:28:15.618750 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:28:15.619517 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:28:15.820056 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:28:15.822879 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:28:15.889052 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m07:28:15.896395 [info ] [Dummy-1   ]: 
+[0m07:28:15.898614 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:28:15.899902 [info ] [Dummy-1   ]: 
+[0m07:28:15.901838 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:28:15.905027 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_AIRBNB'
+[0m07:28:16.064035 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB"
+[0m07:28:16.065450 [debug] [ThreadPool]: On list_AIRBNB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB"} */
+show terse schemas in database AIRBNB
+    limit 10000
+[0m07:28:16.066284 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:28:16.550784 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.484 seconds
+[0m07:28:16.555435 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_AIRBNB_DEV'
+[0m07:28:16.568215 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m07:28:16.568818 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:28:16.569336 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:28:17.030855 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.461 seconds
+[0m07:28:17.035305 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m07:28:17.035826 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+show objects in AIRBNB.DEV
+    limit 10000
+    
+;
+[0m07:28:17.155750 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.119 seconds
+[0m07:28:17.157755 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m07:28:17.158331 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:28:17.227478 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.069 seconds
+[0m07:28:17.240511 [debug] [Thread-2 (]: Began running node model.airbnb.src_listings
+[0m07:28:17.241451 [info ] [Thread-2 (]: 1 of 1 START sql view model DEV.src_listings ................................... [RUN]
+[0m07:28:17.243972 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_AIRBNB_DEV, now model.airbnb.src_listings)
+[0m07:28:17.244631 [debug] [Thread-2 (]: Began compiling node model.airbnb.src_listings
+[0m07:28:17.255486 [debug] [Thread-2 (]: Writing injected SQL for node "model.airbnb.src_listings"
+[0m07:28:17.256740 [debug] [Thread-2 (]: Began executing node model.airbnb.src_listings
+[0m07:28:17.298104 [debug] [Thread-2 (]: Writing runtime sql for node "model.airbnb.src_listings"
+[0m07:28:17.299541 [debug] [Thread-2 (]: Using snowflake connection "model.airbnb.src_listings"
+[0m07:28:17.300106 [debug] [Thread-2 (]: On model.airbnb.src_listings: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "node_id": "model.airbnb.src_listings"} */
+create or replace   view AIRBNB.DEV.src_listings
+  
+   as (
+    with raw_listings as (Select * from AIRBNB.RAW.RAW_LISTINGS)
+SELECT 
+id as listing_id,
+name as listing_name,
+listing_url,
+room_type,
+minimum_nights,
+host_id,
+price as pric_str,
+created_at,
+updated_at
+FROM raw_listings
+  );
+[0m07:28:17.300632 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:28:17.986423 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.685 seconds
+[0m07:28:18.017794 [info ] [Thread-2 (]: 1 of 1 OK created sql view model DEV.src_listings .............................. [[32mSUCCESS 1[0m in 0.77s]
+[0m07:28:18.019602 [debug] [Thread-2 (]: Finished running node model.airbnb.src_listings
+[0m07:28:18.023030 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:28:18.023673 [debug] [Dummy-1   ]: Connection 'list_AIRBNB' was properly closed.
+[0m07:28:18.024130 [debug] [Dummy-1   ]: Connection 'model.airbnb.src_listings' was properly closed.
+[0m07:28:18.024600 [info ] [Dummy-1   ]: 
+[0m07:28:18.025137 [info ] [Dummy-1   ]: Finished running 1 view model in 0 hours 0 minutes and 2.12 seconds (2.12s).
+[0m07:28:18.026129 [debug] [Dummy-1   ]: Command end result
+[0m07:28:18.048333 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:28:18.050318 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:28:18.056429 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:28:18.056896 [info ] [Dummy-1   ]: 
+[0m07:28:18.057526 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m07:28:18.058067 [info ] [Dummy-1   ]: 
+[0m07:28:18.058580 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m07:28:18.060241 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.10008, "process_in_blocks": "0", "process_kernel_time": 1.03, "process_mem_max_rss": "450396", "process_out_blocks": "0", "process_user_time": 6.48}
+[0m07:28:18.060858 [debug] [Dummy-1   ]: Command `cli run` succeeded at 07:28:18.060620 after 5.10 seconds
+[0m07:28:18.061367 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:54:32.999541 | ac83aaeb-c31c-4e1f-babc-fd92fcb6fd36 ==============================
+[0m05:54:32.999541 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:54:33.000374 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': '/tmp/dbt/target', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m05:54:33.269247 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:54:33.832593 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:54:34.016397 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:54:34.017074 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:54:34.157256 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:54:34.159211 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:54:34.194546 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m05:54:34.196377 [info ] [Dummy-1   ]: 
+[0m05:54:34.197036 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m05:54:34.197479 [info ] [Dummy-1   ]: 
+[0m05:54:34.198287 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m05:54:34.200445 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_AIRBNB_DEV'
+[0m05:54:34.310098 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m05:54:34.310650 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:54:34.311149 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:54:34.748099 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.437 seconds
+[0m05:54:34.752601 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m05:54:34.753172 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+show objects in AIRBNB.DEV
+    limit 10000
+    
+;
+[0m05:54:34.892019 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.138 seconds
+[0m05:54:34.894183 [debug] [ThreadPool]: Using snowflake connection "list_AIRBNB_DEV"
+[0m05:54:34.894684 [debug] [ThreadPool]: On list_AIRBNB_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "airbnb", "target_name": "dev", "connection_name": "list_AIRBNB_DEV"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:54:34.959604 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.064 seconds
+[0m05:54:34.971725 [debug] [Thread-2 (]: Began running node model.airbnb.src_listings
+[0m05:54:34.972392 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_AIRBNB_DEV, now model.airbnb.src_listings)
+[0m05:54:34.972926 [debug] [Thread-2 (]: Began compiling node model.airbnb.src_listings
+[0m05:54:34.980553 [debug] [Thread-2 (]: Writing injected SQL for node "model.airbnb.src_listings"
+[0m05:54:34.981301 [debug] [Thread-2 (]: Began executing node model.airbnb.src_listings
+[0m05:54:34.982067 [debug] [Thread-2 (]: Finished running node model.airbnb.src_listings
+[0m05:54:34.984053 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m05:54:34.984504 [debug] [Dummy-1   ]: Connection 'model.airbnb.src_listings' was properly closed.
+[0m05:54:34.985306 [debug] [Dummy-1   ]: Command end result
+[0m05:54:35.005923 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:54:35.007653 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:54:35.014226 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m05:54:35.015889 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.088817, "process_in_blocks": "0", "process_kernel_time": 0.79, "process_mem_max_rss": "461192", "process_out_blocks": "0", "process_user_time": 3.87}
+[0m05:54:35.016517 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 05:54:35.016255 after 2.09 seconds
+[0m05:54:35.017080 [debug] [Dummy-1   ]: Flushing usage events

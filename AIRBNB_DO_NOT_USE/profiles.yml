@@ -1,0 +1,14 @@
+airbnb:
+  target: dev
+ 
+  outputs:
+    dev:
+      type: snowflake
+      #account: 'not-needed'
+      ##user: 'not-needed'
+ 
+      role: ACCOUNTADMIN
+      database: AIRBNB
+      schema: DEV
+      warehouse: COMPUTE_WH
+      threads: 4
