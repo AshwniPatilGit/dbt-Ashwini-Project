@@ -1,4 +1,4 @@
-with raw_reviews as (Select * from AIRBNB.RAW.RAW_REVIEWS)
+with raw_reviews as (Select * from {{ source('airbnb','reviews' ) }} )
 SELECT 
 LISTING_ID, 
 DATE as Review_Date, 
