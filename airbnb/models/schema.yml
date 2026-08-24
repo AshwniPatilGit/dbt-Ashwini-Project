@@ -1,20 +1,4 @@
-models:
-  - name: dim_listings_cleansed
-    description: "This table contains the Airbnb listings data."
-    columns:
-      - name: listing_id
-        description: "The unique identifier for each listing."
-        data_tests:
-          - not_null
-          - unique
-      
-      - name: host_id
-        data_tests:
-          -relationship
-            arguments:
-              to: ref('dim_host_cleansed')
-              field: host_id
-      
+models:    
   - name: dim_hosts_cleansed
     columns:
       - name: host_id
