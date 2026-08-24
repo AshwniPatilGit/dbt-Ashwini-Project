@@ -1,5 +1,5 @@
 models:
-  - name: listings
+  - name: dim_listings_cleansed
     description: "This table contains the Airbnb listings data."
     columns:
       - name: listing_id
@@ -7,33 +7,23 @@ models:
         data_tests:
           - not_null
           - unique
-      - name: name
-        description: "The name of the listing."
+      
       - name: host_id
-        description: "The unique identifier for the host of the listing."
-      - name: host_name
-        description: "The name of the host of the listing."
-      - name: neighbourhood_group
-        description: "The group of neighborhoods where the listing is located."
-      - name: neighbourhood
-        description: "The specific neighborhood where the listing is located."
-      - name: latitude
-        description: "The latitude coordinate of the listing."
-      - name: longitude
-        description: "The longitude coordinate of the listing."
-      - name: room_type
-        description: "The type of room offered in the listing (e.g., entire home, private room)."
-      - name: price
-        description: "The price per night for the listing."
-      - name: minimum_nights
-        description: "The minimum number of nights required to book the listing."
-      - name: number_of_reviews
-        description: "The total number of reviews for the listing."
-      - name: last_review
-        description: "The date of the most recent review for the listing."
-      - name: reviews_per_month
-        description: "The average number of reviews per month for the listing."
-      - name: calculated_host_listings_count
-        description: "The total number of listings by the same host."
-      - name: availability_365
-        description: "The number of days in a year that the listing is available for booking."
+        data_tests:
+          -relationship
+            arguments:
+              to: ref('dim_host_cleansed')
+              field: host_id
+      
+  - name: dim_hosts_cleansed
+    columns:
+    - name: host_id
+      data_tests:
+        -not_null
+        -unique
+    - name: is_superhost
+      data_tests:
+        - accepted_values:
+            arguments:
+              values: ['t', 'f']
+
